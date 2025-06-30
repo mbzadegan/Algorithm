@@ -10,49 +10,46 @@
 ! Time elapsed: 0.00012 seconds
 ! Threads used: 8
 
-
-program subset_sum_show_subset
+program subset_sum_parallel
   use omp_lib
   implicit none
 
-  integer, allocatable :: A(:), path(:)
-  integer :: n, target, i, stat
+  integer, allocatable :: arr(:), path(:)
+  integer :: n, i, target, stat
   logical :: found
   real(8) :: t1, t2
 
-  ! Get input
+  ! Read input
   n = command_argument_count() - 1
   if (n < 1) then
      print *, "Usage: ./subset_sum <target> <a1> <a2> ... <an>"
      stop
   end if
 
-  allocate(A(n), path(n))
+  allocate(arr(n), path(n))
   call get_command_argument(1, target, status=stat)
-  if (stat /= 0) stop "Error reading target."
+  if (stat /= 0) stop "Error: Cannot read target."
 
   do i = 1, n
-     call get_command_argument(i+1, A(i), status=stat)
-     if (stat /= 0) stop "Error reading A"
+     call get_command_argument(i+1, arr(i), status=stat)
+     if (stat /= 0) stop "Error: Cannot read array element."
   end do
 
   path = 0
-  print *, "Subset Sum With Subset Output (OpenMP)"
+  print *, "Subset Sum Solver (Parallel)"
   print *, "Target:", target
-  print *, "Set A:", A
+  print *, "Array: ", arr
 
   call omp_set_num_threads(omp_get_max_threads())
   t1 = omp_get_wtime()
 
-  !$omp parallel
-  !$omp single
-  found = subset_sum(A, path, n, target)
-  !$omp end parallel
+  ! >>> OpenMP must enclose only code (not CONTAINS etc)
+  call solve_parallel(arr, path, n, target, found)
 
   t2 = omp_get_wtime()
 
   if (.not. found) then
-     print *, "Result: NO — no subset found."
+     print *, "No subset found."
   end if
 
   print *, "Time elapsed:", t2 - t1, "seconds"
@@ -60,52 +57,60 @@ program subset_sum_show_subset
 
 contains
 
-  recursive function subset_sum(A, path, n, target) result(ok)
-    integer, intent(in) :: A(:)
-    integer, intent(inout) :: path(:)
-    integer, intent(in) :: n, target
-    logical :: ok
-    logical :: left, right
-    integer :: i
-    integer, allocatable :: pathL(:), pathR(:)
+  subroutine solve_parallel(a, p, m, t, result)
+    integer, intent(in) :: a(:), m, t
+    integer, intent(inout) :: p(:)
+    logical, intent(out) :: result
 
-    if (target == 0) then
-       print *, "Result: YES — subset found:"
+    !$omp parallel default(none) shared(a, p, m, t, result)
+    !$omp single
+    result = subset_sum(a, p, m, t)
+    !$omp end parallel
+  end subroutine solve_parallel
+
+  recursive function subset_sum(a, p, m, t) result(ok)
+    integer, intent(in) :: a(:), m, t
+    integer, intent(inout) :: p(:)
+    logical :: ok
+    integer :: i
+    logical :: left_ok, right_ok
+    integer, allocatable :: p_left(:), p_right(:)
+
+    if (t == 0) then
+       print *, "YES — subset found:"
        write(*,'(A)', advance='no') "Subset: { "
-       do i = 1, size(path)
-          if (path(i) == 1) write(*,'(I0,A)', advance='no') A(i), " "
+       do i = 1, size(p)
+          if (p(i) == 1) write(*,'(I0,A)', advance='no') a(i), " "
        end do
        print *, "}"
        ok = .true.
        return
-    else if (n == 0) then
+    else if (m == 0) then
        ok = .false.
        return
     end if
 
-    ! Clone path for both branches
-    allocate(pathL(size(path)))
-    allocate(pathR(size(path)))
-    pathL = path
-    pathR = path
-    pathL(n) = 0
-    pathR(n) = 1
+    allocate(p_left(size(p)))
+    allocate(p_right(size(p)))
+    p_left = p
+    p_right = p
+    p_right(m) = 1
 
-    left = .false.
-    right = .false.
+    left_ok = .false.
+    right_ok = .false.
 
-    !$omp task shared(left)
-    left = subset_sum(A, pathL, n - 1, target)
+    !$omp task shared(left_ok)
+    left_ok = subset_sum(a, p_left, m - 1, t)
     !$omp end task
 
-    if (A(n) <= target) then
-       !$omp task shared(right)
-       right = subset_sum(A, pathR, n - 1, target - A(n))
+    if (a(m) <= t) then
+       !$omp task shared(right_ok)
+       right_ok = subset_sum(a, p_right, m - 1, t - a(m))
        !$omp end task
     end if
 
     !$omp taskwait
-    ok = left .or. right
+    ok = left_ok .or. right_ok
   end function subset_sum
 
-end program subset_sum_show_subset
+end program subset_sum_parallel
