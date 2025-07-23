@@ -12,7 +12,6 @@ def proof_complexity_simulation(formula, proof_steps):
         print(f"  Step {i+1}: {step}")
     print("✓ Proof verified (toy model)")
 
-
 def circuit_complexity_simulation(truth_table):
     """
     Estimate circuit complexity via formula size (very rough).
