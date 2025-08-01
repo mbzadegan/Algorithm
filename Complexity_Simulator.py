@@ -14,7 +14,7 @@ def proof_complexity_simulation(formula, proof_steps):
 
 def circuit_complexity_simulation(truth_table):
     """
-    Estimate circuit complexity via formula size (very rough).
+    Estimate circuit complexity via formula size (very rough)
     """
     print("\n=== Circuit Complexity ===")
     n = len(truth_table[0][0])  # input size
