@@ -7,6 +7,7 @@ class ComplexityVisitor(ast.NodeVisitor):
         self.max_depth = 0
         self.current_depth = 0
 
+    
     def generic_visit(self, node):
         # Increase depth for loops and recursive functions
         if isinstance(node, (ast.For, ast.While)):
