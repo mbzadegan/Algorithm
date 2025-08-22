@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// Alice sends her full string to Bob (worst-case protocol)
+// Alice sends her full string to Bob (worst-case protocol).
 int naive_communication_protocol(const char *alice, const char *bob, int n, int *bits_sent) {
     *bits_sent = n;
     return strcmp(alice, bob) == 0;
