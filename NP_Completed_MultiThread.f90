@@ -1,4 +1,4 @@
-! This Fortran program uses all CPU Multi-threads and calculates an NP-Complete problem with a parallel algorithm.
+! This Fortran program uses all CPU Multi-threads and calculates an NP-Complete problem with a parallel algorithm
 ! gfortran -fopenmp -O2 subset_sum_show_subset.f90 -o subset_sum
 ! ./subset_sum 9 3 34 4 12 5
 !
