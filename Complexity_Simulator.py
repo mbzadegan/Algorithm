@@ -40,7 +40,7 @@ def communication_complexity_equality(x, y):
 
 def kolmogorov_complexity(string):
     """
-    Meta-complexity: estimate string complexity via compression (very rough).
+    Meta-complexity: estimate string complexity via compression. (very rough)
     """
     print("\n=== Meta-Complexity (Kolmogorov Complexity) ===")
     unique_chars = set(string)
