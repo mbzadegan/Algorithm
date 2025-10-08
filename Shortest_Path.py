@@ -1,6 +1,6 @@
 # Project: Shortest Path in a Weighted Graph (Dijkstra vs. Bellman-Ford)
 # Given a weighted directed graph 
-# G=(V,E), implement two different algorithms to find the shortest path from a source node 
+# G (V, E), implement two different algorithms to find the shortest path from a source node 
 #   Dijkstra’s Algorithm (efficient for non-negative weights)
 #   Bellman-Ford Algorithm (handles negative weights too)
 
@@ -8,6 +8,10 @@
 #    Their performance (runtime for large graphs)
 #    Their correctness (especially when negative edges exist)
 
+# Requirements
+#   Input: number of vertices, edges, source node, and edge list (u, v, w).
+#   Output: shortest distance from source to all nodes (or "INF" if unreachable).
+#   Handle negative weights gracefully.
 
 
 import heapq
