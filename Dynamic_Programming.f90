@@ -1,3 +1,8 @@
+! Matrix Chain Multiplication
+! We’re given a sequence of matrices 𝐴1, 𝐴2, …, 𝐴𝑛 where matrix 𝐴𝑖 has dimensions 𝑝(𝑖-1)×𝑝𝑖
+! We want to find the order of multiplying them that minimizes the number of scalar multiplications.
+
+
 program matrix_chain
     implicit none
     integer, parameter :: n = 6
