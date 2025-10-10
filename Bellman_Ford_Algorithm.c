@@ -1,8 +1,6 @@
-// Given a directed weighted graph G=(V,E) with possibly negative edge weights,
-// find the shortest path from a source vertex s to every other vertex.
-// Unlike Dijkstra’s algorithm, Bellman–Ford correctly handles negative weights and can detect negative-weight cycles.
-
-
+/* Given a directed weighted graph G=(V,E) with possibly negative edge weights,
+ find the shortest path from a source vertex s to every other vertex.
+ Unlike Dijkstra’s algorithm, Bellman–Ford correctly handles negative weights and can detect negative-weight cycles. */
 
 #include <stdio.h>
 #include <stdlib.h>
