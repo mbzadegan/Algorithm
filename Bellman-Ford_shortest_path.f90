@@ -1,8 +1,8 @@
 !--------------------------------------------------------------
 ! Bellman-Ford Algorithm (Single Source Shortest Paths)
 ! From CLRS Chapter 24.1
-! Author: Mohammad
 !--------------------------------------------------------------
+
 program bellman_ford
     implicit none
     integer, parameter :: INF = 99999
