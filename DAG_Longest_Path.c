@@ -1,6 +1,6 @@
 /* Longest Path in a DAG (using Topological Sort)
 Given a Directed Acyclic Graph (DAG) with weighted edges, find the longest path from a given source vertex.
-Unlike general graphs, the longest paths problem is NP-hard, but in a DAG, we can solve it in O(V + E) using topological sorting.
+Unlike general graphs, the longest paths problem is NP-hard; however, in a DAG, it can be solved in O(V + E) using topological sorting.
 From CLRS Chapter 24.2 */
 
 #include <stdio.h>
