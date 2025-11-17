@@ -1,6 +1,5 @@
 // Maximum Subarray Sum - Divide and Conquer
 // From CLRS Chapter 4
-// Author: Mohammad
 
 fn find_max_crossing_subarray(arr: &[i32], low: usize, mid: usize, high: usize) -> (usize, usize, i32) {
     let mut left_sum = i32::MIN;
