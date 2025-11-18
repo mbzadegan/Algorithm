@@ -1,5 +1,5 @@
 // K Shortest Paths using Dijkstra + Yen's Algorithm
-// Advanced CLRS-style implementation
+// Advanced CLRS book style implementation
 
 #include <stdio.h>
 #include <stdlib.h>
