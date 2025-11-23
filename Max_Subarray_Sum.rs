@@ -1,4 +1,4 @@
-// Maximum Subarray Sum - Divide and Conquer
+// Maximum Subarray Sum with Divide and Conquer
 // From CLRS Chapter 4
 
 fn find_max_crossing_subarray(arr: &[i32], low: usize, mid: usize, high: usize) -> (usize, usize, i32) {
