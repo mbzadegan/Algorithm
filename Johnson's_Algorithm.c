@@ -1,5 +1,5 @@
 // Johnson's Algorithm for All-Pairs Shortest Paths
-// Based on CLRS Chapter 25.2
+// Based on CLRS Book - Chapter 25.2
 
 #include <stdio.h>
 #include <stdlib.h>
