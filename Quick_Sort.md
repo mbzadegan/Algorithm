@@ -21,7 +21,7 @@ Quick sort is **one of the best general-purpose sorting algorithms**, but it is 
 - Uses only `O(log n)` additional memory (stack), no extra array needed.
 
 ### ✔ Widely Adopted
-Many sorting library implementations historically used variations of quick sort.
+Many sorting library implementations historically used variations of quicksort.
 
 ---
 
@@ -39,7 +39,7 @@ Common fixes include:
 
 ### ❌ Not Stable
 Equal elements may change order after sorting.  
-Stability can be added but complicates the implementation.
+Stability can be added, but it complicates the implementation.
 
 ---
 
