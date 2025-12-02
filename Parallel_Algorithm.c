@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <omp.h>
-
 /* #pragma omp parallel sections
 {
     #pragma omp section
@@ -14,6 +10,12 @@
 gcc -fopenmp parallel_mergesort.c -o mergesort
 
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
+
+
 void merge(int arr[], int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
