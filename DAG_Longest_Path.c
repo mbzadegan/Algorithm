@@ -20,7 +20,7 @@ struct Graph {
     struct Edge** adj;
 };
 
-// Create a new edge
+// Create a new edge:
 struct Edge* newEdge(int dest, int weight) {
     struct Edge* edge = (struct Edge*)malloc(sizeof(struct Edge));
     edge->dest = dest;
