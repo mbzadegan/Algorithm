@@ -2,7 +2,7 @@
 !
 ! The program:
 !
-! Defines a weighted graph with 6 vertices and several edges (including a negative edge, but no negative cycles).
+! Defines a weighted graph with six vertices and several edges (including a negative edge, but no negative cycles).
 ! Runs both algorithms from the same source vertex (vertex 1).
 ! Prints the shortest path distances found by each algorithm.
 ! Allows comparison of results.
