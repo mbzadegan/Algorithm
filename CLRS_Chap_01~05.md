@@ -114,7 +114,7 @@ This chapter focuses on **asymptotic efficiency**, studying how the running time
 
 ## 4.2 Strassen’s Algorithm
 
-    * [cite_start]**Key Insight:** Strassen discovered a way to compute the matrix product using only **7** recursive multiplications instead of 8, at the cost of performing more matrix additions (18 additions/subtractions)[cite: 2129, 2130].
+* [cite_start]**Key Insight:** Strassen discovered a way to compute the matrix product using only **7** recursive multiplications instead of 8, at the cost of performing more matrix additions (18 additions/subtractions)[cite: 2129, 2130].
 * **Method:**
         1.  Divide input matrices into submatrices of size $n/2$.
         2.  Create 10 matrices ($S_1, \dots, S_{10}$) using sums and differences of the submatrices.
