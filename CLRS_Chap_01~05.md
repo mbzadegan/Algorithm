@@ -18,14 +18,14 @@
 
 ## 2.1 Insertion Sort
 
-* [cite_start]**The Sorting Problem:** The goal is to take a sequence of $n$ numbers (keys) as input and output a permutation of the sequence such that $a'_1 \le a'_2 \le \dots \le a'_n$.
+* **The Sorting Problem:** The goal is to take a sequence of $n$ numbers (keys) as input and output a permutation of the sequence such that $a'_1 \le a'_2 \le \dots \le a'_n$.
 * **Algorithm Logic:** Insertion sort works like sorting a hand of playing cards. It iterates through the input array, maintaining a sorted subarray to the left. [cite_start]For each new element (the "key"), it compares it with elements in the sorted subarray and shifts them to the right until the correct position for the key is found.
 * **Pseudocode:** The algorithm uses nested loops. [cite_start]The outer loop selects the key, and the inner `while` loop shifts elements to make space[cite: 1699].
-* [cite_start]**Loop Invariant:** To prove correctness, a **loop invariant** is used, which must satisfy three properties:
+* **Loop Invariant:** To prove correctness, a **loop invariant** is used, which must satisfy three properties:
     1.  **Initialization:** It is true before the first iteration.
     2.  **Maintenance:** If true before an iteration, it remains true before the next.
     3.  **Termination:** Upon termination, the invariant provides a property that helps show correctness.
-    * [cite_start]For insertion sort, the invariant is that the subarray $A[1..i-1]$ consists of the elements originally in those positions, but in sorted order[cite: 1702].
+    * For insertion sort, the invariant is that the subarray $A[1..i-1]$ consists of the elements originally in those positions, but in sorted order.
 
 ## 2.2 Analyzing Algorithms
 
