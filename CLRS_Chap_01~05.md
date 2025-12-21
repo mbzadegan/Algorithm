@@ -54,7 +54,7 @@
 
 # Chapter 3: Characterizing Running Times
 
-    This chapter focuses on **asymptotic efficiency**, studying how the running time of an algorithm increases with the size of the input in the limit (as the size increases without bound).
+This chapter focuses on **asymptotic efficiency**, studying how the running time of an algorithm increases with the size of the input in the limit (as the size increases without bound).
 
 ## 3.1 $O$-notation, $\Omega$-notation, and $\Theta$-notation
 
