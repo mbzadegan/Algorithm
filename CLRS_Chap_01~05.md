@@ -101,7 +101,7 @@ This chapter focuses on **asymptotic efficiency**, studying how the running time
 
 # Chapter 4: Divide-and-Conquer
 
-    [cite_start]This chapter explores the **divide-and-conquer** method for algorithm design and provides mathematical tools for analyzing the **recurrences** that characterize their running times[cite: 2113].
+[cite_start]This chapter explores the **divide-and-conquer** method for algorithm design and provides mathematical tools for analyzing the **recurrences** that characterize their running times[cite: 2113].
 
 ## 4.1 Multiplying Square Matrices
 
