@@ -58,14 +58,14 @@ This chapter focuses on **asymptotic efficiency**, studying how the running time
 
 ## 3.1 $O$-notation, $\Omega$-notation, and $\Theta$-notation
 
-    * **Asymptotic Efficiency:** For large inputs, the order of growth of the running time is more important than constant factors or lower-order terms. Algorithms are compared based on these asymptotic growth rates.
-    * **$\Theta$-notation (Theta):** Describes an **asymptotically tight bound**.
+* **Asymptotic Efficiency:** For large inputs, the order of growth of the running time is more important than constant factors or lower-order terms. Algorithms are compared based on these asymptotic growth rates.
+* **$\Theta$-notation (Theta):** Describes an **asymptotically tight bound**.
         * $f(n) = \Theta(g(n))$ if there exist positive constants $c_1, c_2, n_0$ such that $0 \le c_1 g(n) \le f(n) \le c_2 g(n)$ for all $n \ge n_0$.
         * Intuitively, the function $f(n)$ grows at the same rate as $g(n)$ within constant factors.
-    * **$O$-notation (Big-Oh):** Describes an **asymptotic upper bound**.
+* **$O$-notation (Big-Oh):** Describes an **asymptotic upper bound**.
         * $f(n) = O(g(n))$ if there exist positive constants $c, n_0$ such that $0 \le f(n) \le c g(n)$ for all $n \ge n_0$.
         * It bounds the worst-case running time. Note that $\Theta(g(n))$ implies $O(g(n))$, but not vice versa.
-    * **$\Omega$-notation (Big-Omega):** Describes an **asymptotic lower bound**.
+* **$\Omega$-notation (Big-Omega):** Describes an **asymptotic lower bound**.
         * $f(n) = \Omega(g(n))$ if there exist positive constants $c, n_0$ such that $0 \le c g(n) \le f(n)$ for all $n \ge n_0$.
         * It is often used to describe best-case running times or lower bounds on algorithmic problems.
 
