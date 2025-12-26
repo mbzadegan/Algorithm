@@ -46,7 +46,7 @@ program shortest_path_comparison
         minDist = 1.0e9
         current = -1
 
-        ! Select unvisited node with smallest distance
+        ! Select an unvisited node with the smallest distance
         do j = 1, n
             if (.not. visited(j) .and. distD(j) < minDist) then
                 minDist = distD(j)
