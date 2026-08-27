@@ -4,6 +4,7 @@ from sage.graphs.graph_generators import graphs
 # -------------------------------
 # Parameters
 # -------------------------------
+
 n = 200
 p = (log(n) + log(log(n))) / n   # near Hamiltonian threshold
 
