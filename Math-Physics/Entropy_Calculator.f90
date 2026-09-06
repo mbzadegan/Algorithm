@@ -49,7 +49,7 @@ contains
         ! Initialize sum to zero
         sum = 0.0
 
-        ! Compute the entropy using Shannon's formula
+        ! Colculate the entropy using Shannon's formula
         do i = 1, 256
             if (freq(i) > 0) then
                 p = real(freq(i)) / real(n)
