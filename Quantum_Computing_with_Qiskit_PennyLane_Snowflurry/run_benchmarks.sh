@@ -11,16 +11,16 @@ export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export JULIA_NUM_THREADS=1
 
-echo "=== PennyLane ==="
+echo "==== PennyLane ===="
 /usr/bin/time -f "whole_process_wall_s=%e" \
     python3 benchmark_pennylane.py "$QUBITS" "$DEPTH" "$REPEATS"
 
 echo
-echo "=== Qiskit ==="
+echo "==== Qiskit ===="
 /usr/bin/time -f "whole_process_wall_s=%e" \
     python3 benchmark_qiskit.py "$QUBITS" "$DEPTH" "$REPEATS"
 
 echo
-echo "=== Snowflurry ==="
+echo "==== Snowflurry ===="
 /usr/bin/time -f "whole_process_wall_s=%e" \
     julia benchmark_snowflurry.jl "$QUBITS" "$DEPTH" "$REPEATS"
